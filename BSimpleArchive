@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# B 
+# compact  عملت نسختين وحده بسيطة و وحده 
+#  ممتع انه اجرب اكثر من طريقه و الاقيهم بعملو نفس الشي
+#this is simple very user friendlyy one i made it first
+
+LOG_FOLDER="$HOME/ts-assignment/logs"        
+ARCHIVE_FOLDER="$HOME/ts-assignment/archive" 
+DATE_TAG=$(date +"%Y-%m-%d_%H-%M")          
+
+mkdir -p "$ARCHIVE_FOLDER"   # لو المجلد مش موجود اعمله
+
+echo "checking for files older than 12 hours in: $LOG_FOLDER"
+OLD_FILES=$(find "$LOG_FOLDER" -type f -mmin +720)  # 12 ساعة
+
+# لو ما لقى اشي
+if [ -z "$OLD_FILES" ]; then
+    echo "no old files found, yalla bye"
+    exit 0
+fi
+
+# اذا لقى فايلات قديمة
+for FILE in $OLD_FILES; do
+    FILENAME=$(basename "$FILE")                         # ياخد الاسم بس بدوون ال path
+    gzip -c "$FILE" > "$ARCHIVE_FOLDER/${FILENAME}_${DATE_TAG}.gz"  # اضغطه ووديه للارشيف
+    rm "$FILE"                                           # احذف الاصلي
+    echo "archived: $FILENAME -> ${FILENAME}_${DATE_TAG}.gz"
+done
+
+echo "done archiving, check folder: $ARCHIVE_FOLDER"
+
+# notes:
+# -z يعني فاضي؟ لو المتغير فاضي يدخل بالـ if
+# gzip -c بيخلي الضغط يروح على output مش overwrite
+# basename بس الاسم مش المسار
+# mkdir -p عشان ما يعترض اذا موجود
+# date +"%Y-%m-%d_%H-%M" بيعطيني تاريخ واضح زي 2025-10-18_15-30
+# exit 0 يعني خلص تمام بدون error
+# DATE_TAG  حطيتها عشان يكون الاسم unique  
+#                        و نعرف متا انعمل
+

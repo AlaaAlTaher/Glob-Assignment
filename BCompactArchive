@@ -1,0 +1,25 @@
+#!/bin/bash
+#can you check the simple version first? Thanks. 
+
+SOURCE_DIR="$HOME/ts-assignment/logs"      
+ARCHIVE_DIR="$HOME/ts-assignment/archive"  
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")          
+
+# find all files older than 12 hours
+find "$SOURCE_DIR" -type f -mmin +720 | while read FILE; do
+    BASENAME=$(basename "$FILE")                           
+    gzip -c "$FILE" > "$ARCHIVE_DIR/${BASENAME}_${TIMESTAMP}.gz"  # compress it and save in archive folder
+    rm "$FILE"                                                # remove original
+    echo "archived $FILE"                                     # print for testing
+done
+
+# notes:
+
+#  > يعني يوجه النتيجة لفايل جديد
+# finds the files and then assign thme to FILE in a loop, compress each and send its compressed version while keeping the original and removing the orifignal file 
+#simpler code but a bit more advanced, the firsst one was simpler to think about and wrtie. but i enjoyed both. 
+#  and am thinking of connecting this assignment to the first one A as if am checking on logs multiple times and if there is many errors send an email then
+#compress the results to save space and maybe there is backup that happens to the archive file in a server or smth.
+# overall it was fun.
+
+
