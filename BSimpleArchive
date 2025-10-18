@@ -43,3 +43,5 @@ echo "done archiving, check folder: $ARCHIVE_FOLDER"
 
 # to not forget on my laptop:   chmod +x ~/BSimpleArchive.sh ~/BCompactArchive.sh              
 #|||| to be able to excute them on laptop VM 
+
+#bash BSimpleArchive
