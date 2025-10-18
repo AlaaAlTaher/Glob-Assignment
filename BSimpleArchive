@@ -40,3 +40,6 @@ echo "done archiving, check folder: $ARCHIVE_FOLDER"
 # DATE_TAG  حطيتها عشان يكون الاسم unique  
 #                        و نعرف متا انعمل
 
+
+# to not forget on my laptop:   chmod +x ~/BSimpleArchive.sh ~/BCompactArchive.sh              
+#|||| to be able to excute them on laptop VM 

@@ -19,7 +19,8 @@ done
 # finds the files and then assign thme to FILE in a loop, compress each and send its compressed version while keeping the original and removing the orifignal file 
 #simpler code but a bit more advanced, the firsst one was simpler to think about and wrtie. but i enjoyed both. 
 #  and am thinking of connecting this assignment to the first one A as if am checking on logs multiple times and if there is many errors send an email then
-#compress the results to save space and maybe there is backup that happens to the archive file in a server or smth.
+#compress the results after 12 hours to save space and maybe there is backup that happens to the archive file in a server or smth.
 # overall it was fun.
 
-
+# to not forget on my laptop:   chmod +x ~/BSimpleArchive.sh ~/BCompactArchive.sh          
+#|||| to be able to excute them on laptop VM 
