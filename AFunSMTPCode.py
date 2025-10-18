@@ -16,7 +16,7 @@ THRESHOLD = 5  # لو اكثر من 5 لازم ابعت ايميل
 
 # email setup
 SMTP_HOST = "smtp.gmail.com"  # سيرفر الجيميل
-SMTP_PORT = 587               # tls port
+SMTP_PORT = 587               # smtp port
 SMTP_USER = "alaa24taher@gmail.com"   # الايميل اللي رح يرسل
 SMTP_PASS = "cyoq mduh vswj qlvq"   # from fake email for security
 EMAIL_TO = "alaabin10@gmail.com"  # الايميل اللي رح توصله الرسالة
