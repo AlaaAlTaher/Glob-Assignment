@@ -45,3 +45,10 @@ echo "done archiving, check folder: $ARCHIVE_FOLDER"
 #|||| to be able to excute them on laptop VM 
 
 #bash BSimpleArchive
+
+#crontab -e
+
+#10 * * * * /home/BSimpleArchive.sh >> /home/ts-assignment/archive/cron_log.txt 2>&1
+
+# 2>&1 to send errorsss  to same folder with normal msgs. 
+# >> its like append, it adds not replac

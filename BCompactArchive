@@ -27,3 +27,8 @@ done
 
 
 #bash BCompactArchive
+
+
+#crontab -e
+
+#10 * * * * /home/BCompactArchive.sh >> /home/ts-assignment/archive/cron_log.txt 2>&1
