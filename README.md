@@ -1,4 +1,26 @@
-# 🧩 Practical — Complete Assignment (A, B, and C)
+# 🧩 Technical Support Practical Assignment
+
+## 📚 Contents
+
+1. [Theoretical Part](#1-theoretical-part)
+2. [Part A — Python Log Analysis Script](#🧩-part-a--python-log-analysis-script)
+3. [Part B — Bash Script: Scheduled Job for Archiving](#🧩-part-b--bash-script-scheduled-job-for-archiving)
+4. [Part C — Wireshark Network Capture](#🧩-part-c--wireshark-network-capture)
+
+---
+
+# 1️⃣ Theoretical Part (Presentation)
+
+**Important** - The following link contains my ongoing PowerPoint presentation draft for the theoretical part of the assignment. It’s still under revision today (Saturday) <ins>  **Its not ready yet, it will be changed and updated and modified**  </ins>   , but the link will stay active and automatically update as I make changes.
+<br>
+<br>
+## 🎓 **[2G GSM Network: Core Elements & Interconnections (Canva Presentation)](https://www.canva.com/design/DAG2H_phwqE/pqeb0hCpYVaWLPFm3CZbaw/edit?utm_content=DAG2H_phwqE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
+<br>
+<br>
+
+---
+
+# 🧩 2️⃣ Practical — Complete Assignment (A, B, and C)
 
 ---
 
@@ -29,14 +51,15 @@ The script uses Gmail SMTP to send alert emails if needed:
 ```python
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USER = "your_email@example.com"
-SMTP_PASS = "app_password_here"
+SMTP_USER = "alaa24taher@gmail.com"
+SMTP_PASS = "asdf asdf asdf asdf"
 EMAIL_TO  = "destination@example.com"
 ```
 
 ### ✅ Output
 
-* Output file saved in `~/ts-assignment/output/`
+* Output file saved in `~/ts-assignment/output/` (folder auto-created if not found)
+* Example filename: `output_2025-10-18_11-30.txt`
 * Email alert sent if `matches > 5`
 
 ---
@@ -47,18 +70,19 @@ EMAIL_TO  = "destination@example.com"
 
 Create a scheduled job (cron) to check a specific folder every hour (at minute 10). If any files are older than 12 hours, compress and move them to an archive folder.
 
-### 🧩 Example Bash Script (simplified)
+### 🧩 Example Bash Script
 
 ```bash
 #!/bin/bash
 
+# Define source and archive directories
 SOURCE_DIR="/home/pc/ts-assignment/logs"
 ARCHIVE_DIR="/home/pc/ts-assignment/archive"
 
 mkdir -p "$ARCHIVE_DIR"
 
 # Find files older than 12 hours and compress them
-timefind "$SOURCE_DIR" -type f -mmin +720 -exec gzip {} \; -exec mv {}.gz "$ARCHIVE_DIR" \;
+find "$SOURCE_DIR" -type f -mmin +720 -exec gzip {} \; -exec mv {}.gz "$ARCHIVE_DIR" \;
 ```
 
 ### 🕒 Add to Cron Schedule
@@ -72,7 +96,7 @@ crontab -e
 Add this line to run every hour at the 10th minute:
 
 ```bash
-10 * * * * /home/pc/ts-assignment/archive_script.sh
+10 * * * * /home/ts-assignment/archive_script.sh  (minimal line to keep for readme)
 ```
 
 ### ⚙️ Explanation
@@ -88,9 +112,9 @@ Use `chmod +x archive_script.sh` to make it executable.
 
 ---
 
-## 🧩 Part C — Wireshark Network Capture (analyses below and Data Capture is attached in the Repo)
+## 🧩 Part C — Wireshark Network Capture
 
-### 🧠 e Assignment Description
+### 🧠 Assignment Description
 
 Using Wireshark, capture and analyze network traffic between your **laptop (client)** and a **web server** (Ubuntu VM). Identify the following from the captured packets:
 
@@ -107,10 +131,10 @@ Using Wireshark, capture and analyze network traffic between your **laptop (clie
    ```
 2. **Find the VM IP:** `ip a`
 3. **Access from Windows browser:** `http://<VM-IP>:8080`
-4. **Start Wireshark** on Windows → select **Wi-Fi** (since the VM uses Bridged Adapter)
+4. **Start Wireshark** on Windows → select **Wi-Fi** (Bridged Adapter mode)
 5. **Filter by IP:**
 
-   ```
+   ```bash
    ip.addr == 192.168.100.50
    ```
 
@@ -124,7 +148,7 @@ Destination Port: 8080
 Protocol: TCP (HTTP)
 ```
 
-This shows:
+### 🧠 Analysis
 
 * **Windows host (192.168.100.78)** acted as the client
 * **Ubuntu VM (192.168.100.50)** acted as the server
@@ -136,7 +160,7 @@ The client (Windows) uses random **ephemeral ports** for each new connection —
 
 ### 🔹 What is ICMP
 
-ICMP = **Internet Control Message Protocol**, used for network diagnostics. For example:
+ICMP = **Internet Control Message Protocol**, used for network diagnostics. Example:
 
 ```bash
 ping 192.168.100.50
@@ -163,8 +187,8 @@ File → Save As → C_Wireshark_Report.pcapng
 
 ### ✅ Conclusion
 
-The capture confirms successful HTTP communication between the Windows client and the Ubuntu web server. Wireshark displayed TCP handshakes, HTTP requests/responses, and ICMP messages, proving full two-way network communication.
+The capture confirms successful HTTP communication between the Windows client and the Ubuntu web server. Wireshark displayed TCP handshakes, HTTP requests/responses, and ICMP messages, confirming full two-way communication.
 
 ---
 
-✅ **Final Note:** Practical A is now fully completed — including Part A (Python Script), Part B (Bash Cron Job), and Part C (Wireshark Capture).
+✅ **Final Note:** All three parts of the practical section (A, B, and C) have been fully completed and verified.
