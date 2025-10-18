@@ -1,4 +1,4 @@
-# 🧩 Technical Support Practical Assignment
+# 💻 Technical Support GLOB Assignment
 
 ## 📚 Contents
 
