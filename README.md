@@ -14,7 +14,7 @@
 **Important** - The following link contains my ongoing PowerPoint presentation draft for the theoretical part of the assignment. It’s still under revision today (Saturday) <ins>  **Its not ready yet, it will be changed and updated and modified**  </ins>   , but the link will stay active and automatically update as I make changes.
 <br>
 <br>
-## 🎓 **[2G GSM Network: Core Elements & Interconnections (Canva Presentation)](https://www.canva.com/design/DAG2H_phwqE/pqeb0hCpYVaWLPFm3CZbaw/edit?utm_content=DAG2H_phwqE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
+## 🎓 **[2G GSM Network: Core Elements & Interconnections (Canva Presentation)](https://www.canva.com/design/DAG2H4GZ8TU/_iFdLnj4zoVaJapfrfsEew/edit?utm_content=DAG2H4GZ8TU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
 <br>
 <br>
 
